@@ -81,7 +81,7 @@ var newYear = new Date().getFullYear();
 var copyRight = document.querySelector('.sb-footer-copyright');
 copyRight.innerHTML = "Copyright &copy 2001 - " + newYear + " Syncfusion Inc.";
 if(ej.base.registerLicense != undefined){
-	ej.base.registerLicense('{SyncfusionJSLicensekey}');
+	ej.base.registerLicense('');
 }
 function preventTabSwipe(e) {
     if (e.isSwiped) {
