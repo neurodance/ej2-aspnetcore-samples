@@ -337,11 +337,19 @@ function sbHeaderClick(action, preventSearch) {
             curPopup = switcherPopup;
             break;
         case 'changeTheme':
+            if (leftToggle.classList.contains('toggle-active') && isTablet) {
+                toggleLeftPane();
+            }
+            settingElement.classList.remove('active');
             headerThemeSwitch.classList.toggle('active');
             setPressedAttribute(headerThemeSwitch);
             curPopup = themeSwitherPopup;
             break;
         case 'toggleSettings':
+            if (leftToggle.classList.contains('toggle-active') && isTablet) {
+                toggleLeftPane();
+            }
+            headerThemeSwitch.classList.remove('active');
             settingElement.classList.toggle('active');
             setPressedAttribute(settingElement);
             themeDropDown.index = themes.indexOf(selectedTheme);
@@ -909,7 +917,6 @@ function getPathName() {
 function getSamplePath() {
     return location.pathname.split('/').slice(-2).join('/');
 }
-
 function searchNavigation(arg) {
     var eventType = arg.event ? arg.event.pointerType : null; 
     if (eventType){
